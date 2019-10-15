@@ -1,8 +1,9 @@
 #This class demonstrates use of puppet's 'apl'
 # 'apl' = Automatic Parameter Lookup
 class hierasample::apl (
+  String              $filename,
   Boolean             $ssl,
-  Booleam             $backups_enabled,
+  Boolean             $backups_enabled,
   Optional[String[1]] $site_alias =undef,
 ) {
   file { "/tmp/${filename}":
