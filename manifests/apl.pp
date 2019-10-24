@@ -9,18 +9,19 @@ class hierasample::apl (
   Optional[String[1]] $site_alias =undef,
 ) {
   file { "/tmp/${filename}":
-    ensure  => file,
-    content => @("_EOF_"),
-               Data from hierasample::apl
-               ----
-               hierasample::apl::ssl: ${ssl}
-               hierasample::apl::backups_enabled: ${backups_enabled}
-               hierasample::apl::site_alias: ${site_alias}
-               hierasample::apl::service_acct_name: ${service_acct_name}
-               hierasample::apl::service_acct_key: ${service_acct_key}
-               |_EOF_
-    owner   => 'root',
-    mode    => '0644',
+    ensure   => file,
+    content  => @("_EOF_"),
+                Data from hierasample::apl
+                ----
+                hierasample::apl::ssl: ${ssl}
+                hierasample::apl::backups_enabled: ${backups_enabled}
+                hierasample::apl::site_alias: ${site_alias}
+                hierasample::apl::service_acct_name: ${service_acct_name}
+                hierasample::apl::service_acct_key: ${service_acct_key}
+                |_EOF_
+    owner    => 'root',
+    mode     => '0400',
+    show_diff => false,
 
   }
 
