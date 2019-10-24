@@ -44,5 +44,6 @@
 #
 class hierasample {
  include hierasample::apl
-
+ include hierasample::lookup
+ 
 }
